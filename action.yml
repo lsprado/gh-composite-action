@@ -1,0 +1,18 @@
+name: 'Run Bat File'
+description: 'Run Bat File with parameters'
+inputs:
+  int1:  # id of input
+    description: 'Number 1'
+    required: true
+  int2:
+    description: 'Number 2'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: echo valor1 = ${{ inputs.int1 }}.
+      shell: cmd
+    - run: echo valor2 = ${{ inputs.int2 }}.
+      shell: cmd          
+    - run: script.bat 4 2
+      shell: cmd
