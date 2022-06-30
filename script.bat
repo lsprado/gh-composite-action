@@ -1,0 +1,15 @@
+@ECHO OFF
+
+ECHO Starting...
+
+SET /a INT1=%1
+SET /a INT2=%2
+
+ECHO %INT1%
+ECHO %INT2%
+
+SET /a ANSWER=INT1*INT2
+
+ECHO %ANSWER%
+
+ECHO Finishing...
