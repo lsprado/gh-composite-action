@@ -14,5 +14,5 @@ runs:
       shell: cmd
     - run: echo valor2 = ${{ inputs.int2 }}.
       shell: cmd          
-    - run: script.bat 4 2
+    - run: .\script.bat 4 2
       shell: cmd
