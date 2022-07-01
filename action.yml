@@ -21,11 +21,11 @@ runs:
     - run: echo PRODUCAO
       shell: cmd
       if: ${{ inputs.tipo }} == 'producao'
-    
-    - run: ${{ github.action_path }}\script.bat ${{ inputs.int1 }} ${{ inputs.int2 }}
+     
+    - run: ${{ github.action_path }}\script.bat ${{ inputs.int1 }} ${{ inputs.int2 }} ${{ inputs.tipo }}
       shell: cmd
       if: ${{ inputs.tipo }} == 'teste'
     
-    - run: ${{ github.action_path }}\script.bat 10 20
+    - run: ${{ github.action_path }}\script.bat 10 20 ${{ inputs.tipo }}
       shell: cmd
       if: ${{ inputs.tipo }} == 'producao'
