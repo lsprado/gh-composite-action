@@ -1,8 +1,8 @@
 name: 'Run Bat File'
 description: 'Run Bat File with parameters'
 inputs:
-  type:
-    description: 'Type'
+  tipo:
+    description: 'Tipo do bat'
     required: true
   int1:
     description: 'Number 1'
@@ -15,7 +15,7 @@ runs:
   steps:          
     - run: ${{ github.action_path }}\script.bat ${{ inputs.int1 }} ${{ inputs.int2 }}
       shell: cmd
-      if: ${{ inputs.type }} = 'teste'
-    - run: ${{ github.action_path }}\script.bat ${{ inputs.int1 }} ${{ inputs.int2 }}
+      if: ${{ inputs.tipo }} = 'teste'
+    - run: ${{ github.action_path }}\script.bat 10 20
       shell: cmd
-      if: ${{ inputs.type }} = 'producao'
+      if: ${{ inputs.tipo }} = 'producao'
