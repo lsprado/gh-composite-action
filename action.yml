@@ -15,11 +15,11 @@ runs:
   steps:
     
     - name: condition teste
-      if: ${{ inputs.tipo }} == 'teste'
+      if: inputs.tipo == 'teste'
       run: ${{ github.action_path }}\script1.bat ${{ inputs.int1 }} ${{ inputs.int2 }} ${{ inputs.tipo }}
       shell: cmd
     
     - name: condition producao
-      if: ${{ inputs.tipo }} == 'producao'
+      if: inputs.tipo == 'producao'
       run: ${{ github.action_path }}\script2.bat
       shell: cmd
