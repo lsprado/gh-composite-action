@@ -1,7 +1,10 @@
 name: 'Run Bat File'
 description: 'Run Bat File with parameters'
 inputs:
-  int1:  # id of input
+  type:
+    description: 'Type'
+    required: true
+  int1:
     description: 'Number 1'
     required: true
   int2:
@@ -9,10 +12,10 @@ inputs:
     required: true
 runs:
   using: "composite"
-  steps:
-    - run: echo valor1 = ${{ inputs.int1 }}.
-      shell: cmd
-    - run: echo valor2 = ${{ inputs.int2 }}.
-      shell: cmd          
+  steps:          
     - run: ${{ github.action_path }}\script.bat ${{ inputs.int1 }} ${{ inputs.int2 }}
       shell: cmd
+      if: ${{ inputs.type }} = 'teste'
+    - run: ${{ github.action_path }}\script.bat ${{ inputs.int1 }} ${{ inputs.int2 }}
+      shell: cmd
+      if: ${{ inputs.type }} = 'producao'
