@@ -1,0 +1,17 @@
+@ECHO OFF
+
+ECHO Starting Script 1...
+
+SET INT1=%1
+SET INT2=%2
+SET TIPO=%3
+
+ECHO %INT1%
+ECHO %INT2%
+ECHO %TIPO%
+
+SET /a ANSWER=INT1*INT2
+
+ECHO %ANSWER%
+
+ECHO Finishing...
