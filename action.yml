@@ -13,12 +13,13 @@ inputs:
 runs:
   using: "composite"
   steps:
-    if: ${{ inputs.tipo }} == 'teste'
+    
     - name: condition teste
+      if: ${{ inputs.tipo }} == 'teste'
       run: ${{ github.action_path }}\script1.bat ${{ inputs.int1 }} ${{ inputs.int2 }} ${{ inputs.tipo }}
       shell: cmd
     
-    if: ${{ inputs.tipo }} == 'producao'
     - name: condition producao
+      if: ${{ inputs.tipo }} == 'producao'
       run: ${{ github.action_path }}\script2.bat
       shell: cmd
