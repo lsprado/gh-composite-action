@@ -12,10 +12,20 @@ inputs:
     required: true
 runs:
   using: "composite"
-  steps:          
+  steps:
+    
+    - run: echo TESTE
+      shell: cmd
+      if: ${{ inputs.tipo }} = 'teste'
+
+    - run: echo PRODUCAO
+      shell: cmd
+      if: ${{ inputs.tipo }} = 'producao'
+    
     - run: ${{ github.action_path }}\script.bat ${{ inputs.int1 }} ${{ inputs.int2 }}
       shell: cmd
       if: ${{ inputs.tipo }} = 'teste'
+    
     - run: ${{ github.action_path }}\script.bat 10 20
       shell: cmd
       if: ${{ inputs.tipo }} = 'producao'
